@@ -7,3 +7,7 @@ function NotesApplication ()
 	this.notes =  notes[];
 	
 }
+
+function create(note_content){
+		
+	}
