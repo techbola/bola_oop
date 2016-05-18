@@ -9,5 +9,6 @@ function NotesApplication ()
 }
 
 function create(note_content){
-		
+		notes.push(note_content);
+		return notes[];
 	}
