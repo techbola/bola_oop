@@ -1,24 +1,41 @@
-function NotesApplication ()
-{
-	var authorr = function(author){
-		this.author = author;
+function NotesApplication (author){
+	this.author = author;
+	this.notes =  [];
+    
+}
+	NotesApplication.prototype.create = function (note_content){
+		return this.notes.push(note_content);
+		
+	};
+	
+	NotesApplication.prototype.get = function (note_id){
+		var gt = this.notes[note_id];
+		console.log(gt);
+		
+	};
+	
+	NotesApplication.prototype.listNotes =function (){
+		for(var i=0; i<this.notes.length; i++){
+			console.log("Note ID: " + i );
+			console.log("Note Content: " + this.notes[i]);
+			console.log("Author: " + this.author );
+		}
 	};
 
-	this.notes =  notes[];
+	NotesApplication.prototype.search = function(search_text) {
+		var result ='';
+		for (var i = 0; i < this.notes.length; i++) {
+			if(this.notes[i].indexOf(search_text)){
+			console.log("Showing result for search:" + " " + "Note ID: " + i + this.notes[i] + "By Author " + this.author)
+			}
+		return result;
+	}
+	};
 	
-}
-
-function create(note_content){
-		notes.push(note_content);
-		return notes[];
-	}
-
-	function listNotes(note_id,note_content,author){
-
-	 	
-
-		for(i=0; i<notes.length; i++){
-
-		}
-
-	}
+	NotesApplication.prototype.delete = function(note_id) {
+		delete this.notes[note_id - 1];
+	};
+	
+	NotesApplication.prototype.edit = function(note_id, new_content){
+		return this.notes[note_id]= new_content;
+	};
